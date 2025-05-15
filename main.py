@@ -1,6 +1,5 @@
 # TODO: 使用01编码阴阳爻
 # TODO: 找到阴阳爻的字符
-# TODO: 完成变卦的编写
 # TODO: 适配周易64卦的编码和字符集
 # TODO: 学习起卦、纳甲、安适应、寻卦宫、装六亲、解卦
 
@@ -28,7 +27,7 @@ def get_ben():
     return xxs_reverse
 
 
-def print_xx(num):
+def print_ben(num):
     if num == 9:
         print("-o")
     elif num == 6:
@@ -38,7 +37,22 @@ def print_xx(num):
     elif num % 2 == 0:
         print("--")
 
+def print_bian(num):
+    if num == 9:
+        print("--")
+    elif num == 6:
+        print("-")
+    elif num % 2 == 1:
+        print("-")
+    elif num % 2 == 0:
+        print("--")
 
 list_a = get_ben()
+
+print("本卦：")
 for i in range(len(list_a)):
-    print_xx(list_a[i])
+    print_ben(list_a[i])
+
+print("变卦：")
+for i in range(len(list_a)):
+    print_bian(list_a[i])
